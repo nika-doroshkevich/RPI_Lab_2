@@ -11,11 +11,8 @@
 
 <!--Part 1-->
 <header class="header">
-    <div class="container">
         <div class="header__inner">
-            <div class="header__logo">
-                <img src="images/header_main.jpg" alt="">
-            </div>
+            <a href="index.html"><img  src="images/header_main.jpg" alt="" class="header__logo"></a>
 
             <nav class="nav">
                 <a class="nav__link" href="#t1" id="t1">Home</a>
@@ -24,12 +21,82 @@
                 <a class="nav__link" href="#t4">Testiminial</a>
                 <a class="nav__link" href="#t5">FAQ</a>
 
-                <button class="blue_button1" type="See_all">Try for free</button>
+                <button class="open-button" type="See_all" id="open-button"  data-toggle="open-button">Try for free</button>
 
             </nav>
         </div>
-    </div>
+
 </header>
+
+<div id="oo" class="oo"></div>
+<div class="modal" id="modal1">
+    <div class="modal_content">
+        <button class="close-button" id="close-button" title="Закрыть модальное окно"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <form class="fora" id="mars-once">
+            <input type="text" name="name" placeholder="Name" id="input_1" class="for" required>
+            <input type="email" name="email" placeholder="Email" id="input_2"  class="for" required>
+            <input    class="for2" id="input_3"    required name="phone" value=""  placeholder="+375 (__) ___ ____">
+            <input type="submit" value="Send" class="Send" id="send" >
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="modal3">
+
+    <span class="regis">Регистрация прошла успешно!</span>
+</div>
+
+<div class="modal" id="modal4">
+    <span class="regis">Вы уже зарегестрированы!</span>
+</div>
+
+<script src="button.js"></script>
+
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        [].forEach.call( document.querySelectorAll('.for2'), function(input) {
+            var keyCode;
+            function mask(event) {
+                event.keyCode && (keyCode = event.keyCode);
+                var pos = this.selectionStart;
+                if (pos < 3) event.preventDefault();
+                var matrix = "+375 (__) ___ ____",
+                    i = 0,
+                    def = matrix.replace(/\D/g, ""),
+                    val = this.value.replace(/\D/g, ""),
+                    new_value = matrix.replace(/[_\d]/g, function(a) {
+                        return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+                    });
+                i = new_value.indexOf("_");
+                if (i != -1) {
+                    i < 5 && (i = 3);
+                    new_value = new_value.slice(0, i)
+                }
+                var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+                    function(a) {
+                        return "\\d{1," + a.length + "}"
+                    }).replace(/[+()]/g, "\\$&");
+                reg = new RegExp("^" + reg + "$");
+                if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+                if (event.type == "blur" && this.value.length < 5)  this.value = ""
+            }
+
+            input.addEventListener("input", mask, false);
+            input.addEventListener("focus", mask, false);
+            input.addEventListener("blur", mask, false);
+            input.addEventListener("keydown", mask, false)
+
+        });
+
+    });
+
+
+</script>
+
+
+
+
 
 
 <div class="intro">
@@ -41,7 +108,7 @@
                 <p>Increase productivity with a simple to-do app. app for managing your personal budgets.</p>
             </div>
             <form class="See_all" action="/" method="post">
-                <button class="blue_button2" type="See_all">Try for free</button>
+                <button class="open-button" type="See_all" id="blue_button2"  data-toggle="blue_button2">Try for free</button>
                 <form>
                     <form class="See_all" action="/" method="post">
                         <button class="white_button2" type="See_all">Watch demo video</button>

@@ -11,8 +11,6 @@ if (sessionStorage.getItem('data') == null) {
     let d = sessionStorage.getItem('data');
     slides[d].className = 'slide showing';
     currentSlide = Number(d);
-    console.log(currentSlide);
-    console.log(d);
 }
 
 function nextSlide() {
@@ -26,8 +24,6 @@ function previousSlide() {
 }
 
 function goToSlide(n) {
-    console.log(currentSlide);
-    console.log(n);
     slides[currentSlide].className = 'slide';
     currentSlide = (n + slides.length) % slides.length;
     slides[currentSlide].className = 'slide showing';
@@ -35,7 +31,6 @@ function goToSlide(n) {
 
 next.onclick = function() {
     nextSlide();
-
 };
 
 previous.onclick = function() {
@@ -48,4 +43,3 @@ addEventListener("keydown", function (event) {
     if (event.keyCode == 37)
         previousSlide();
 });
-

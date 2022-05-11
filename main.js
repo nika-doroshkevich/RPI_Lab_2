@@ -1,4 +1,3 @@
-
 var accmain = document.getElementsByName('accmain');
 var tl = document.getElementsByName('titlmmm');
 var nameimg = document.getElementsByName('nameimg');
@@ -16,7 +15,6 @@ for (i = 0; i < accmain.length; i++) {
          accmain[i].addEventListener('click', myfunc);
     }
 
-
     function myfunc() {
         var itemClass1 = this.className;
         
@@ -29,7 +27,6 @@ for (i = 0; i < accmain.length; i++) {
 
         if (itemClass1 == 'AccordCl') {
             this.className = 'AccordOp';
-            console.log(nameimg);
 
             for (i = 0; i < accmain.length; i++) {
                 if (nameimg[i].parentNode.parentNode.className == 'AccordOp'){

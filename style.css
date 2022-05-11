@@ -134,20 +134,23 @@ h1, h2, h3, h4, h5, h6 {
 /* Header */
 .header {
     width: 100%;
+    max-width: 1600px;
+    max-height: 1000px;
+    width: 100%;
     padding-top: 30px;
-
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+
+    align-items: center;
+    margin-left: 45px;
 }
 
 .header__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-left: 45px;
+
 }
 
 .header__logo {
@@ -1656,3 +1659,129 @@ i {
     margin-top: 8px;
     color: #616368;
 }
+.modal {
+	/* Не обязательно  block */
+	opacity: 0;
+	transition: .3s;
+	visibility: hidden;
+display: flex;
+
+
+	width: 600px;
+	max-width: 100%;
+
+	height: 310px;
+	max-height: 100%;
+	position: fixed;
+	z-index: 100;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+}
+
+.modal_active{
+	visibility: visible;
+	opacity: 1;
+	background: #f9f9f9;
+}
+.modal_content{
+
+	box-shadow: 0 5px 15px black;
+	border-radius: 3px;
+
+}
+.fora{
+	left: 25%;
+	top:15%;
+	position: fixed;
+	margin:  auto;
+}
+.closed {
+	display: none;
+}
+.oo{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	visibility: hidden;
+	background: rgba(0, 0, 0, 0.6);
+}
+.gg{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	visibility: hidden;
+	background: #40975f;
+}
+.gg_active{
+	visibility: visible;
+}
+.modal-overlay {
+	visibility: visible;
+}
+.modal-guts {
+
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 20px 50px 20px 20px;
+}
+
+.modal .close-button {
+	position: absolute;
+	z-index: 1;
+	top: 10px;
+	right: 20px;
+
+	border: 0;
+	background: blue;
+	color: white;
+	cursor: pointer;
+	font-size: 1.3rem;
+}
+
+.open-button {
+	border-radius: 30px;
+	height: 60px;
+	width: 175px;
+
+	background-color: #2500f9;
+	border: 0;
+	cursor: pointer;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: -50px;
+	margin-left: 33px;
+	color: #fff;
+	transition: background 0.2s linear;
+}
+
+.for::-webkit-inner-spin-button{
+	display: none;
+}
+/* НЕ НУЖНО ДЛЯ МОДАЛКИ */
+.for,.for2{
+
+	display: block;
+margin-top: 20px;
+	margin-left: 70px;
+}
+.Send{
+	display: block;
+	margin-top: 20px;
+	margin-left: 120px;
+}
+.regis{
+	margin-left: 190px;
+	margin-top: 150px;
+	font-size: 20px;
+}
+
+
