@@ -209,63 +209,40 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: -35px;
 }
 
-.popup {
+.modal-container {
+    display: none;
     position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    overflow-y: auto;
-    overflow-x: hidden;
+    background-color: rgba(0,0,0,0.6);
 }
 
-.popup:target {
-    opacity: 1;
-    visibility: visible;
-}
-
-.visible-popup {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup_area {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.popup_body {
-    min-height: 100%;
+.modal-content {
+    margin: 5% auto;
+    height: 760px;
+    width: 1000px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 10px;
+    margin-left: 370px;
 }
-.popup_content {
-    background-color: #fff;
-    color: #000;
-    max-width: 800px;
-    padding: 25px;
-    position: relative;
+
+.close-span {
+    height: 100px;
+    width: 100px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: -40px;
+    transition: all .3s;
 }
-.popup_close {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 20px;
-    color: #242f51;
+
+.close-span:hover,
+.close-span:focus {
+    color: black;
+    cursor: pointer;
 }
-.popup_title {
-    font-size: 40px;
-    margin-right: 0px 0px 1em 0px;
-}
-.popup_text {}
 
 /*КОНЕЦ ЧАСТИ ТИМОФЕЯ*/
 

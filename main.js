@@ -1,3 +1,24 @@
+function openModal() {
+    var modal = document.getElementById("video-modal");
+    var iframe = document.getElementById("video");
+
+    // Display window & autoplay
+    modal.style.display = "block";
+    iframe.src ="https://www.youtube.com/embed/2HScn9vpnuA";
+}
+
+function closeModal(event) {
+    var modal = document.getElementById("video-modal");
+    var iframe = document.getElementById("video");
+
+    if (event.target !== iframe) {
+        // Hide window & remove source (including autoplaying)
+        modal.style.display = "none";
+        iframe.src = "";
+    }
+}
+
+
 var accmain = document.getElementsByName('accmain');
 var tl = document.getElementsByName('titlmmm');
 var nameimg = document.getElementsByName('nameimg');
