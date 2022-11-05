@@ -31,4 +31,5 @@ In the modal window there should be a registration form with the fields:
     - Name
     - Email
     - Phone number
+
 The Send button at the bottom and a cross in the upper right corner. Stylize is similar to the rest of the page. Each field must have input validation, and the button must be blocked until the correct data is entered. After clicking the submit button, the modal window should show the text about the successful submission of the form and close after 5 seconds. The next time you click on the button, a message should appear for 5 seconds that the registration has already been made. Refreshing the page should not reset this.
